@@ -25,7 +25,9 @@ for i in a:
         xlf_lo = joblib.load(model)
         y_pred = xlf_lo.predict(data)
         y_pred = DataFrame(y_pred).T
-        with open('/Test_ME'+ str(i) +'_pre.csv','a') as f:
+        dir = os.getcwd()
+        os.mkdir(dir+'/Test_output/')
+        with open('/Test_output/ME'+ str(i) +'_pre.csv','a') as f:
             f.write('')
         y_pred.to_csv('/Test_output/ME'+ str(i) +'_pre.csv', 
                       index = False, header = False, mode='a')
