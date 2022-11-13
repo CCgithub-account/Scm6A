@@ -2,9 +2,6 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import os
-import joblib
-from pandas.core.frame import DataFrame
-from sklearn.model_selection import cross_val_score, train_test_split, GridSearchCV 
 from sklearn.preprocessing import StandardScaler
 
 a = list(range(2,43))
