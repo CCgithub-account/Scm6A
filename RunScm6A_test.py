@@ -42,7 +42,6 @@ def addC():
     cell = cell.head(1)
     del cell[0]
     global a
-    
     MEname = [outputpath+f'/ME{i}_pre.csv' for i in a]
     for i in range(0,len(MEname)):
         MEn = pd.read_csv(MEname[i],header=None,sep=",")
@@ -58,7 +57,6 @@ def addR():
         module = modellist[modellist['module'] == 'ME'+ str(i)]
         module.reset_index(inplace=True,drop=True)
         MEn = pd.read_csv(outputpath+'/ME'+str(i)+'_pre.csv',header=0,sep=",")
-       # B = DataFrame(np.append(module,MEn,axis=1))
         B = module.join(MEn)
         B.to_csv(outputpath+'/ME'+str(i)+'_pre.csv', index = False, header = True, mode='w')
 
